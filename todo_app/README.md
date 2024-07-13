@@ -1,4 +1,5 @@
 # todo_app
+#Here is the documentation for the Firebase Integration with Flutter
 
 Step 1: Create a New Flutter Project
 Open your terminal and run the following command to create a new Flutter project:
@@ -12,11 +13,9 @@ flutter create todo_app
 
 Navigate into the project directory:
 
-sh
-
-Copy code
 
 cd todo_app
+
 
 
 Step 2: Set Up Firebase
