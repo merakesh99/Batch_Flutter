@@ -23,7 +23,7 @@ class WeatherScreen extends StatefulWidget {
 }
 
 class _WeatherScreenState extends State<WeatherScreen> {
-  String city = "Garia";
+  String city = "";
   String apiKey =""; // Replace with your OpenWeatherMap API key
   String apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=";
 
