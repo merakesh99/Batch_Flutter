@@ -1,80 +1,89 @@
 import 'package:flutter/material.dart';
-import 'package:state_work/ThreePage.dart';
-import 'package:state_work/basic_form.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-          useMaterial3: true,
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Stateful Widget Example'),
         ),
-        // home: const MyHomePage(title: 'Flutter Demo Home Page'),
-        // home: MyCustomForm()
-        home: const ThreePage());
+        body: Center(
+          child: StatefulExample(),
+        ),
+      ),
+    );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-  final String title;
-
+class StatefulExample extends StatefulWidget {
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  _StatefulExampleState createState() => _StatefulExampleState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+class _StatefulExampleState extends State<StatefulExample> {
+  String displayText = 'Hello, world!';
+  bool isButtonDisabled = false;
 
-  void _incrementCounter() {
+  void _updateText() {
     setState(() {
-      _counter++;
+      displayText = 'Hello, Flutter!';
+      isButtonDisabled = true;
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),
-      body:
-          // Center is a layout widget. It takes a single child and positions it
-          // in the middle of the parent.
-          Center(
-        child: Column(
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      // crossAxisAlignment: CrossAxisAlignment.center,
+      children: <Widget>[
+        Text(displayText),
+        ElevatedButton(
+          onPressed: isButtonDisabled ? null : _updateText,
+          child: const Text('Update'),
+        ),
+        Container(
+          padding: EdgeInsets.all(20.0),
+          margin: EdgeInsets.all(16.0),
+          decoration: BoxDecoration(
+            border: Border.all(color: Color.fromARGB(255, 63, 192, 20)),
+          ),
+          child: Text('This is a container'),
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            Text('Row 1'),
+            Text('Row 2'),
+            Text('Row 3'),
+          ],
+        ),
+        Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+            Text('Col 1'),
+            Text('Col 2'),
+            Text('Col 3'),
+          ],
+        ),
+        Stack(
+          children: <Widget>[
+            Container(
+              width: 100,
+              height: 100,
+              color: Color.fromARGB(255, 185, 13, 201),
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+            Container(
+              width: 100,
+              height: 50,
+              color: Colors.orange,
             ),
           ],
         ),
-      ),
-
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ],
     );
   }
 }

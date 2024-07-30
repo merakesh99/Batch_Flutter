@@ -1,0 +1,190 @@
+#Class 2: Widgets and Layouts
+
+1. Introduction to Widgets in Flutter
+
+What are Widgets?
+  The building blocks of a Flutter app.
+  Everything in Flutter is a widget, from a button to padding.
+
+
+Widget Tree
+  The hierarchy of widgets that build the UI.
+
+
+2. Stateless vs Stateful Widgets
+
+  a. Stateless Widgets
+  Definition: Widgets that do not require mutable state.
+
+  Use Case: When the UI does not need to change dynamically.
+
+  Example: Text, Icon, RaisedButton.
+
+
+import 'package:flutter/material.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Stateless Widget Example'),
+        ),
+        body: Center(
+          child: Text('Hello, world!'),
+        ),
+      ),
+    );
+  }
+}
+______________________________________________
+
+b. Stateful Widgets
+Definition: Widgets that can change their state during the lifecycle.
+
+Use Case: When the UI needs to update dynamically.
+
+Example: Checkbox, Slider, Form.
+
+
+ 
+import 'package:flutter/material.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Stateful Widget Example'),
+        ),
+        body: Center(
+          child: StatefulExample(),
+        ),
+      ),
+    );
+  }
+}
+
+class StatefulExample extends StatefulWidget {
+  @override
+  _StatefulExampleState createState() => _StatefulExampleState();
+}
+
+class _StatefulExampleState extends State<StatefulExample> {
+  String displayText = 'Hello, world!';
+
+  void _updateText() {
+    setState(() {
+      displayText = 'Hello, Flutter!';
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Text(displayText),
+        ElevatedButton(
+          onPressed: _updateText,
+          child: Text('Update Text'),
+        ),
+      ],
+    );
+  }
+}
+
+_________________________________________________
+
+3. Common Layout Widgets
+
+  a. Container
+  Purpose: Adds padding, margins, borders, background color, or constraints.
+
+Example:
+ 
+Container(
+  padding: EdgeInsets.all(16.0),
+  margin: EdgeInsets.all(16.0),
+  decoration: BoxDecoration(
+    border: Border.all(color: Colors.blueAccent),
+  ),
+  child: Text('This is a container'),
+);
+
+  b. Row and Column
+  Purpose: Arrange widgets horizontally (Row) or vertically (Column).
+
+Example:
+
+
+ 
+Row(
+  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+  children: <Widget>[
+    Text('Item 1'),
+    Text('Item 2'),
+    Text('Item 3'),
+  ],
+);
+
+Column(
+  mainAxisAlignment: MainAxisAlignment.center,
+  children: <Widget>[
+    Text('Item 1'),
+    Text('Item 2'),
+    Text('Item 3'),
+  ],
+);
+
+c. Stack
+Purpose: Overlap widgets on top of each other.
+
+Example:
+
+
+ 
+Stack(
+  children: <Widget>[
+    Container(
+      width: 100,
+      height: 100,
+      color: Colors.blue,
+    ),
+    Container(
+      width: 50,
+      height: 50,
+      color: Colors.red,
+    ),
+  ],
+);
+
+d. ListView
+Purpose: Display a scrollable list of widgets.
+
+Example:
+
+
+ 
+ListView(
+  children: <Widget>[
+    ListTile(
+      leading: Icon(Icons.map),
+      title: Text('Map'),
+    ),
+    ListTile(
+      leading: Icon(Icons.photo_album),
+      title: Text('Album'),
+    ),
+    ListTile(
+      leading: Icon(Icons.phone),
+      title: Text('Phone'),
+    ),
+  ],
+);
