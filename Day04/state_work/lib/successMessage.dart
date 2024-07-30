@@ -15,9 +15,9 @@ class successMessage extends StatelessWidget {
           onPressed: () {
             Navigator.pop(context);
           },
-        //child: const Text("Heyyey e fue ufr ur"),
+          //child: const Text("Heyyey e fue ufr ur"),
         ),
-      // ),
+      ),
     );
   }
 }
