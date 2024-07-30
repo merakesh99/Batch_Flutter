@@ -47,6 +47,9 @@ class DatabaseHelper {
     });
   }
 
+
+  
+
   Future<int> updateItem(Item item) async {
     Database db = await database;
     return await db.update('items', item.toMap(), where: 'id = ?', whereArgs: [item.id]);
