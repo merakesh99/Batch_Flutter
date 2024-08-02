@@ -23,8 +23,9 @@ class WeatherScreen extends StatefulWidget {
 }
 
 class _WeatherScreenState extends State<WeatherScreen> {
-  String city = "";
-  String apiKey =""; // Replace with your OpenWeatherMap API key
+  String city = "kolkata";
+  String apiKey =
+      "2a4880c3445adc24c1e567b474b309f5"; // Replace with your OpenWeatherMap API key
   String apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=";
 
   Map<String, dynamic>? weatherData;
@@ -36,8 +37,8 @@ class _WeatherScreenState extends State<WeatherScreen> {
   }
 
   Future<void> fetchWeather() async {
-    final response =
-        await http.get(Uri.parse('$apiUrl$city&appid=$apiKey&units=metric'));
+    final URL = Uri.parse('$apiUrl$city&appid=$apiKey&units=metric');
+    final response = await http.get(URL);
 
     print(response.body);
     if (response.statusCode == 200) {
@@ -57,12 +58,15 @@ class _WeatherScreenState extends State<WeatherScreen> {
       ),
       body: Center(
         child: weatherData == null
-            ? CircularProgressIndicator()
+            ? CircularProgressIndicator(
+                strokeWidth: 5.0,
+              )
             : Column(
                 mainAxisAlignment: MainAxisAlignment.center,
+                // crossAxisAlignment: CrossAxisAlignment.end,
                 children: <Widget>[
                   Text(
-                    'City: ${weatherData!['name']}',
+                    'City: ${weatherData?['name']}',
                     style: TextStyle(fontSize: 24),
                   ),
                   Text(
