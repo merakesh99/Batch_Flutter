@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "362987989679",
+    "project_id": "notewrap-620cb",
+    "storage_bucket": "notewrap-620cb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:362987989679:android:255354fc0dc8c6dcab025a",
+        "android_client_info": {
+          "package_name": "com.example.notewrap"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5b_7rW-iyUfjTx1pm-rsMUhpggMbTrqU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:362987989679:android:13f8f4b2821ca93eab025a",
+        "android_client_info": {
+          "package_name": "com.notewrap.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5b_7rW-iyUfjTx1pm-rsMUhpggMbTrqU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:362987989679:android:c8280fc5e3b53096ab025a",
+        "android_client_info": {
+          "package_name": "com.notewrap.com"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5b_7rW-iyUfjTx1pm-rsMUhpggMbTrqU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
