@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "220508333603",
+    "project_id": "notewrap-aabe9",
+    "storage_bucket": "notewrap-aabe9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:220508333603:android:071de6e7edac16aec23396",
+        "android_client_info": {
+          "package_name": "com.example.notewrap"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMS4kKM-mGDVwm63Y_HmkpOgW-FubkTYg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
