@@ -103,7 +103,7 @@ class DatabaseHelper {
     // `conflictAlgorithm` to use in case the same Note is inserted twice.
     //
     // In this case, replace any previous data.
-    await db.insert(tableNotes, note.toJson(),
+    await db.insert(tableNotes, ote.toJsnon(),
         conflictAlgorithm: ConflictAlgorithm.replace);
   }
 
